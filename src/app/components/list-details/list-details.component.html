@@ -1,0 +1,25 @@
+<!-- <ul>
+    <li *ngFor="let showvalue of data">
+        {{showvalue.userId}}
+        {{showvalue.id}}
+        {{showvalue.title}}
+    </li> 
+ 
+</ul> -->
+  
+<input type="text" name="searchdata" [(ngModel)]="searchdata">
+        <ul *ngIf="data | filter: 'title':searchdata as result">
+            <li><h2>Promise Data</h2></li>
+            <li *ngFor="let getvalue of data | filter: 'title':searchdata">
+                {{getvalue.userId}}
+                {{getvalue.id}}
+                {{getvalue.title}}
+            </li>
+            <p *ngIf="result.length === 0">
+                Search result is not found
+            </p>
+        </ul>
+      
+
+
+

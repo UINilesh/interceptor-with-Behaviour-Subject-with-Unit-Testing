@@ -1,0 +1,33 @@
+<p>
+    First Name : {{user}}<br>
+    Last Name : {{lastname}}<br>
+    City : {{city}}
+  </p>
+  <form [formGroup]="registerform" (ngSubmit)="editTheUser()">
+  <input formControlName="firstname" placeholder="Firstname" type="text" [(ngModel)]="editUser"><br><br>
+  <div *ngIf="submitted && f.firstname.errors">
+    <div *ngIf="f.firstname.errors.required">
+        Firstname is required
+    </div>
+
+</div>
+
+  <input formControlName="lastname" placeholder="Lastname" type="text" [(ngModel)]="editUserone"><br><br>
+  <div *ngIf="submitted && f.lastname.errors">
+    <div *ngIf="f.lastname.errors.required">
+        Lastname is required
+    </div>
+
+</div>
+
+  <input formControlName="city" placeholder="City" type="text" [(ngModel)]="editUsertwo"><br><br>
+  <div *ngIf="submitted && f.city.errors">
+    <div *ngIf="f.city.errors.required">
+        City is required
+    </div>
+
+</div>
+
+  
+  <button>Change</button>
+</form>
